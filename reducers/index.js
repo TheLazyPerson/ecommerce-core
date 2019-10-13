@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import message from "./messages";
 
-export default combineReducers({
+const ecommerceApp = combineReducers({
   message
 });
+
+export default ecommerceApp;
