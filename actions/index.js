@@ -1,5 +1,3 @@
-export const showMessage = () => {
-  return {
-    type: "SHOW_MESSAGE"
-  };
-};
+export const showMessage = () => ({
+  type: "SHOW_MESSAGE"
+});

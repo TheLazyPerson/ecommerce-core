@@ -1,8 +1,11 @@
-import { combineReducers } from "redux";
-import message from "./messages";
+const message = (state = {}, action) => {
+  switch (action.type) {
+    case "SHOW_MESSAGE":
+      return { ...state, say: "Hello World Redux" };
 
-const ecommerceApp = combineReducers({
-  message
-});
+    default:
+      return state;
+  }
+};
 
-export default ecommerceApp;
+export default message;
