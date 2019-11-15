@@ -20,14 +20,14 @@ const development = {
 }
 
 const API_ENDPOINT =  "api/v1"
+export const IS_WEB = process.env.IS_WEB == "true"
+
 export const API_URL = IS_PRODUCTION ? production.API_URL : development.API_URL
 export const API_ROOT = `${API_URL}/${API_ENDPOINT}`
 
 export const SENTRY_KEY= IS_PRODUCTION ? production.SENTRY_KEY : development.SENTRY_KEY
 export const SENTRY_APP= IS_PRODUCTION ? production.SENTRY_APP : development.SENTRY_APP
-
 export const API_LOAD_MORE_LIMIT = 20
-
 export const LOGIN_API_CONSTANTS = {
 "client_id": IS_PRODUCTION ? production.API_CLIENT_ID : development.API_CLIENT_ID,
 "client_secret":  IS_PRODUCTION ? production.API_CLIENT_SECRET : development.API_CLIENT_SECRET
@@ -35,3 +35,4 @@ export const LOGIN_API_CONSTANTS = {
 
 //platform keys
 export const Build = 100
+export const platform = IS_WEB ? 'web' : 'react-native'  

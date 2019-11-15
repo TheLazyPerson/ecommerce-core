@@ -1,7 +1,7 @@
 import { CALL_API } from 'redux-api-middleware';
 import isNil from 'lodash/isNil';
 import { platform, Build } from '../constants/index';
-import { isTypeRequest } from '../utils/validationhelper';
+import { isTypeRequest } from '../utils/validationHelper';
 import Auth from '../auth'
 
 export default store => next => action => {
