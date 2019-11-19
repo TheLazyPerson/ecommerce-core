@@ -6,5 +6,6 @@ const GetBearerToken = () => {
     return `Bearer ${token}`
  */
   return `Bearer append_token_here`;
-  return null
 }
+
+export default {GetBearerToken};
