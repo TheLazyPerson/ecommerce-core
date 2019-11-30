@@ -26,7 +26,6 @@ export default store => next => action => {
         Authorization: '',
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'X-Requested-With': 'XMLHttpRequest',
         Platform: platform,
         Build: Build,
         accept:"application/json"
