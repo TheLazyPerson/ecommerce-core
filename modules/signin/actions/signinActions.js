@@ -3,7 +3,8 @@ import { API_ROOT } from 'Core/constants';
 import {
   SIGN_IN_REQUEST,
   SIGN_IN_SUCCESS,
-  SIGN_IN_FAILURE
+  SIGN_IN_FAILURE,
+  SET_USER_DATA,
 } from '../constants/signinConstants';
 
 export function postSigninAction(signinObject) {
@@ -19,4 +20,11 @@ export function postSigninAction(signinObject) {
           ]
       }
   }
+}
+
+export function setUserDataAction(userData) {
+  return {
+    type: SET_USER_DATA,
+    payload: userData,
+  };
 }

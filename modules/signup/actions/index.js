@@ -15,18 +15,3 @@ export function postSignupAction(signupObject) {
       }
   }
 }
-
-/*   export function postCheckin(teamId, checkInObject) {
-    return {
-        [RSAA]: {
-            endpoint: `${API_ROOT}/teams/${teamId}/checkin`,
-            method: 'POST',
-            body: JSON.stringify(checkInObject),
-            types: [
-                {type: POST_CHECKIN_REQUEST, meta:{showOverlayLoader: true}},
-                {type: POST_CHECKIN_SUCCESS, meta:{showOverlayLoader: false}},
-                {type: POST_CHECKIN_FAILURE, meta:{showOverlayLoader: false}}
-            ]
-        }
-    }
-  } */

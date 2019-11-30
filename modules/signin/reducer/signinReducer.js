@@ -2,6 +2,7 @@ import {
   SIGN_IN_REQUEST,
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
+  SET_USER_DATA,
 } from '../constants/signinConstants';
 
 const initialState = {
@@ -18,6 +19,7 @@ switch (type) {
   
   case SIGN_IN_SUCCESS:
     return {
+      ...state,
       userDetails: payload.data.user_details,
       userToken: payload.data.user_token,
     };
@@ -25,6 +27,14 @@ switch (type) {
   case SIGN_IN_FAILURE:
     return {
       ...state,
+    };
+  
+  case SET_USER_DATA:
+
+    return {
+      ...state,
+      userDetails: payload.user_details,
+      userToken: payload.user_token,
     };
 
   default:
