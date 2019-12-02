@@ -8,7 +8,7 @@ const initialState = {
   exhibitionList: []
 };
 
-export default function signinReducer(state = initialState, {type, payload}) {
+export default function homePageReducer(state = initialState, {type, payload}) {
 switch (type) {
   case GET_EXHIBITION_LIST_REQUEST:
     return {

@@ -6,7 +6,7 @@ import {
   GET_EXHIBITION_LIST_FAILURE,
 } from './constants';
 
-export function getExhibitionList(exhibitionRequestObject) {
+export function getExhibitionListAction(exhibitionRequestObject) {
   return {
       [RSAA]: {
           endpoint: `${API_ROOT}/exhibitions/list`,
