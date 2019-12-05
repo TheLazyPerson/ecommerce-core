@@ -21,9 +21,9 @@ export default store => next => action => {
       isTypeRequest(types[0].type) && 
       types[0].meta &&
       types[0].meta.noAuth) {
-      
+              
       callApi.headers = Object.assign({}, callApi.headers, {
-        Authorization: '',
+        Authorization: ``,
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         Platform: platform,
@@ -35,7 +35,7 @@ export default store => next => action => {
     }
     else if (isNil(callApi.headers)) {
         callApi.headers = Object.assign({}, callApi.headers, {
-          Authorization: Auth.GetBearerToken() || '',
+          Authorization: Auth.GetBearerToken(store) || '',
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
           Platform: platform,
