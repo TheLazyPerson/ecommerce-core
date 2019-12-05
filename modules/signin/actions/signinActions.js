@@ -5,6 +5,9 @@ import {
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
   SET_USER_DATA,
+  LOGOUT_SUCCESS,
+  LOGOUT_REQUEST,
+  LOGOUT_FAILURE,
 } from '../constants/signinConstants';
 
 export function postSigninAction(signinObject) {
@@ -19,6 +22,21 @@ export function postSigninAction(signinObject) {
             {type: SIGN_IN_FAILURE, meta: {showLoader: false}}
           ]
       }
+  }
+}
+
+export function logoutAction() {
+  // TODO make logout api call then 
+  return {
+    [RSAA]: {
+        endpoint: `${API_ROOT}/customer/logout`,
+        method: 'GET',
+        types: [
+          {type: LOGOUT_REQUEST, meta: {showLoader: true}},
+          {type: LOGOUT_SUCCESS, meta: {showLoader: false}},
+          {type: LOGOUT_FAILURE, meta: {showLoader: false}}
+        ]
+    }
   }
 }
 
