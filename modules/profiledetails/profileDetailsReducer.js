@@ -13,18 +13,10 @@ export default function profileDetailsReducer(
   { type, payload }
 ) {
   switch (type) {
-    case GET_PROFILE_DETAILS_REQUEST:
-      return {
-        ...state
-      };
     case GET_PROFILE_DETAILS_SUCCESS:
       return {
         ...state,
-        userDetails: payload.data
-      };
-    case GET_PROFILE_DETAILS_FAILURE:
-      return {
-        ...state
+        userDetails: payload.data.user_details
       };
     default:
       return state;
