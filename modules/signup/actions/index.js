@@ -7,7 +7,11 @@ export function postSignupAction(signupObject) {
       endpoint: `${API_ROOT}/customer/register`,
       method: "POST",
       body: JSON.stringify(signupObject),
-      types: ["SIGNUP_REQUEST", "SIGNUP_SUCCESS", "SIGNUP_FAILURE"]
+      types: [
+        {type: "SIGNUP_REQUEST", meta: { showLoader: true }},
+        {type: "SIGNUP_SUCCESS", meta: { showLoader: false }},
+        {type: "SIGNUP_FAILURE", meta: { showLoader: false }}
+      ]
     }
   };
 }

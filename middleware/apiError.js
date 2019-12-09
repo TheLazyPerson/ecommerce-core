@@ -83,7 +83,7 @@ export default store => next => action => {
 const apiErrorAction = (dispatch, message) => {
   dispatch({
     type: "SHOW_API_ERROR_MESSAGE",
-    message: message
+    payload: {  message }
   });
 };
 
