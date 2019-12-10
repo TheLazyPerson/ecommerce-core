@@ -34,7 +34,7 @@ export function editAddressAction(id, addressObject) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/address/${id}/update`,
-      method: "GET",
+      method: "POST",
       body: JSON.stringify(addressObject),
       types: [EDIT_ADDRESS_REQUEST, EDIT_ADDRESS_SUCCESS, EDIT_ADDRESS_FAILURE]
     }
@@ -60,7 +60,7 @@ export function createAddressAction(addressObject) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/address/create`,
-      method: "GET",
+      method: "POST",
       body: JSON.stringify(addressObject),
       types: [
         CREATE_ADDRESS_REQUEST,
