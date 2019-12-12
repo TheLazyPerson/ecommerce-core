@@ -38,7 +38,7 @@ export function removeFromBagAction(id) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/checkout/bag/${id}/delete`,
-      method: "POST",
+      method: "GET",
       body: JSON.stringify(),
       types: [
         REMOVE_FROM_BAG_REQUEST,
