@@ -4,6 +4,10 @@ import {
   GET_PRODUCT_DETAIL_FAILURE
 } from "./constants";
 
+import {
+  POST_ADD_TO_WISHLIST_SUCCESS
+} from 'Core/modules/wishlist/wishlistConstants';
+
 const initialState = {
   productDetail: {}
 };
@@ -26,6 +30,13 @@ export default function productDetailReducer(
       return {
         ...state
       };
+
+    // TODO update reducer to have addToWishList
+    // case POST_ADD_TO_WISHLIST_SUCCESS:
+    //   return {
+    //     ...state,        
+    //   }
+    
     default:
       return state;
   }
