@@ -3,7 +3,10 @@ import { API_ROOT } from "Core/constants";
 import {
   GET_PROFILE_DETAILS_REQUEST,
   GET_PROFILE_DETAILS_SUCCESS,
-  GET_PROFILE_DETAILS_FAILURE
+  GET_PROFILE_DETAILS_FAILURE,
+  EDIT_PROFILE_DETAILS_REQUEST,
+  EDIT_PROFILE_DETAILS_SUCCESS,
+  EDIT_PROFILE_DETAILS_FAILURE
 } from "./constants";
 
 export function getProfileDetailsAction() {
@@ -16,6 +19,21 @@ export function getProfileDetailsAction() {
         GET_PROFILE_DETAILS_REQUEST,
         GET_PROFILE_DETAILS_SUCCESS,
         GET_PROFILE_DETAILS_FAILURE
+      ]
+    }
+  };
+}
+
+export function editProfileDetailsAction(updatedProfileObject) {
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/customer/update`,
+      method: "POST",
+      body: JSON.stringify(updatedProfileObject),
+      types: [
+        EDIT_PROFILE_DETAILS_REQUEST,
+        EDIT_PROFILE_DETAILS_SUCCESS,
+        EDIT_PROFILE_DETAILS_FAILURE
       ]
     }
   };
