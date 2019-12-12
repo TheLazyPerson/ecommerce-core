@@ -7,7 +7,11 @@ import {
 
   GET_WISHLIST_REQUEST,
   GET_WISHLIST_SUCCESS,
-  GET_WISHLIST_FAILURE
+  GET_WISHLIST_FAILURE,
+
+  GET_REMOVE_FROM_WISHLIST_REQUEST,
+  GET_REMOVE_FROM_WISHLIST_SUCCESS,
+  GET_REMOVE_FROM_WISHLIST_FAILURE,
 } from './wishlistConstants';
 
 export function addToWishlistAction(wishlistObject) {
@@ -20,6 +24,20 @@ export function addToWishlistAction(wishlistObject) {
         POST_ADD_TO_WISHLIST_REQUEST,
         POST_ADD_TO_WISHLIST_SUCCESS,
         POST_ADD_TO_WISHLIST_FAILURE,
+      ]
+    }
+  };
+}
+
+export function removeFromWishlist(wishlistId) {  
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/customer/wishlist/remove/${wishlistId}`,
+      method: "GET",
+      types: [
+        GET_REMOVE_FROM_WISHLIST_REQUEST,
+        GET_REMOVE_FROM_WISHLIST_SUCCESS,
+        GET_REMOVE_FROM_WISHLIST_FAILURE
       ]
     }
   };
