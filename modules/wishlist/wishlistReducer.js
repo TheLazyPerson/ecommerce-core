@@ -1,22 +1,22 @@
 import {
-  POST_ADD_TO_WISHLIST_REQUEST,
-  POST_ADD_TO_WISHLIST_SUCCESS,
-  POST_ADD_TO_WISHLIST_FAILURE
-} from "./constants";
+  GET_WISHLIST_REQUEST,
+  GET_WISHLIST_SUCCESS,
+  GET_WISHLIST_FAILURE
+} from "./wishlistConstants";
 
 const initialState = {
-  productList: [],
+  wishlist: [],
 };
 
 export default function wishlistReducer(
   state = initialState,
   { type, payload }
-) {
+){
   switch (type) {
-    case POST_ADD_TO_WISHLIST_SUCCESS:
+    case GET_WISHLIST_SUCCESS:
       return {
         ...state,
-        //productList: [...state.productList, payload.data]
+        wishlist: payload.data
       };
     default:
       return state;

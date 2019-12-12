@@ -4,6 +4,10 @@ import {
   POST_ADD_TO_WISHLIST_REQUEST,
   POST_ADD_TO_WISHLIST_SUCCESS,
   POST_ADD_TO_WISHLIST_FAILURE,
+
+  GET_WISHLIST_REQUEST,
+  GET_WISHLIST_SUCCESS,
+  GET_WISHLIST_FAILURE
 } from './wishlistConstants';
 
 export function addToWishlistAction(wishlistObject) {
@@ -16,6 +20,20 @@ export function addToWishlistAction(wishlistObject) {
         POST_ADD_TO_WISHLIST_REQUEST,
         POST_ADD_TO_WISHLIST_SUCCESS,
         POST_ADD_TO_WISHLIST_FAILURE,
+      ]
+    }
+  };
+}
+
+export function getWishlistAction() {
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/customer/wishlist`,
+      method: "GET",
+      types: [
+        GET_WISHLIST_REQUEST,
+        GET_WISHLIST_SUCCESS,
+        GET_WISHLIST_FAILURE,
       ]
     }
   };
