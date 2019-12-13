@@ -22,21 +22,22 @@ export function addToWishlistAction(wishlistObject) {
       body: JSON.stringify(wishlistObject),
       types: [
         POST_ADD_TO_WISHLIST_REQUEST,
-        POST_ADD_TO_WISHLIST_SUCCESS,
+        {type: POST_ADD_TO_WISHLIST_SUCCESS, meta: wishlistObject},
         POST_ADD_TO_WISHLIST_FAILURE,
       ]
     }
   };
 }
 
-export function removeFromWishlist(wishlistId) {  
+export function removeFromWishlistAction(wishlistObject) {  
   return {
     [RSAA]: {
-      endpoint: `${API_ROOT}/customer/wishlist/remove/${wishlistId}`,
-      method: "GET",
+      endpoint: `${API_ROOT}/customer/wishlist/remove`,
+      method: "POST",
+      body: JSON.stringify(wishlistObject),
       types: [
         GET_REMOVE_FROM_WISHLIST_REQUEST,
-        GET_REMOVE_FROM_WISHLIST_SUCCESS,
+        {type: GET_REMOVE_FROM_WISHLIST_SUCCESS,  meta: wishlistObject},
         GET_REMOVE_FROM_WISHLIST_FAILURE
       ]
     }
