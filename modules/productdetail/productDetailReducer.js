@@ -22,11 +22,13 @@ export default function productDetailReducer(
       return {
         ...state
       };
+
     case GET_PRODUCT_DETAIL_SUCCESS:
       return {
         ...state,
         productDetail: payload.data
       };
+
     case GET_PRODUCT_DETAIL_FAILURE:
       return {
         ...state
@@ -41,7 +43,7 @@ export default function productDetailReducer(
        } : state.productDetail
       }
     
-    case GET_REMOVE_FROM_WISHLIST_SUCCESS:      
+    case GET_REMOVE_FROM_WISHLIST_SUCCESS:
         return {
         ...state,
         productDetail: meta.product_id == state.productDetail.id ? {
