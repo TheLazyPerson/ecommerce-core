@@ -28,7 +28,7 @@ export default store => next => action => {
         "Access-Control-Allow-Origin": "*",
         Platform: platform,
         Build: Build,
-        accept: "application/json"
+        Accept: "application/json,*/*"
       });
 
       return next(action);
@@ -39,7 +39,7 @@ export default store => next => action => {
         "Access-Control-Allow-Origin": "*",
         Platform: platform,
         Build: Build,
-        accept: "application/json"
+        Accept: "application/json,*/*"
       });
       return next(action);
     }

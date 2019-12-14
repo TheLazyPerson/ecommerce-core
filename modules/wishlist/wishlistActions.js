@@ -29,7 +29,7 @@ export function addToWishlistAction(wishlistObject) {
   };
 }
 
-export function removeFromWishlistAction(wishlistObject) {  
+export function removeFromWishlistAction(wishlistObject) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/wishlist/remove`,
