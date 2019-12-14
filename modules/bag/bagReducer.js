@@ -48,7 +48,8 @@ export default function bagReducer(state = initialState, { type, payload }) {
       };
     case REMOVE_FROM_BAG_SUCCESS:
       return {
-        ...state
+        ...state,
+        bagData: payload.data
       };
     case REMOVE_FROM_BAG_FAILURE:
       return {
