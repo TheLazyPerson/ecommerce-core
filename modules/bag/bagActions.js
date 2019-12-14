@@ -9,7 +9,10 @@ import {
   ADD_TO_BAG_FAILURE,
   REMOVE_FROM_BAG_REQUEST,
   REMOVE_FROM_BAG_SUCCESS,
-  REMOVE_FROM_BAG_FAILURE
+  REMOVE_FROM_BAG_FAILURE,
+  EDIT_QUANTITY_REQUEST,
+  EDIT_QUANTITY_SUCCESS,
+  EDIT_QUANTITY_FAILURE
 } from "./constants";
 
 export function addToBagAction(addItemObject) {
@@ -44,6 +47,21 @@ export function removeFromBagAction(id) {
         REMOVE_FROM_BAG_REQUEST,
         REMOVE_FROM_BAG_SUCCESS,
         REMOVE_FROM_BAG_FAILURE
+      ]
+    }
+  };
+}
+
+export function editQuantityAction(editQuantityObject) {
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/checkout/bag/update`,
+      method: "POST",
+      body: JSON.stringify(editQuantityObject),
+      types: [
+        EDIT_QUANTITY_REQUEST,
+        EDIT_QUANTITY_SUCCESS,
+        EDIT_QUANTITY_FAILURE
       ]
     }
   };

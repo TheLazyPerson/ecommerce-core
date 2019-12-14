@@ -7,7 +7,10 @@ import {
   ADD_TO_BAG_FAILURE,
   REMOVE_FROM_BAG_REQUEST,
   REMOVE_FROM_BAG_SUCCESS,
-  REMOVE_FROM_BAG_FAILURE
+  REMOVE_FROM_BAG_FAILURE,
+  EDIT_QUANTITY_REQUEST,
+  EDIT_QUANTITY_SUCCESS,
+  EDIT_QUANTITY_FAILURE
 } from "./constants";
 
 const initialState = {
@@ -52,6 +55,19 @@ export default function bagReducer(state = initialState, { type, payload }) {
         bagData: payload.data
       };
     case REMOVE_FROM_BAG_FAILURE:
+      return {
+        ...state
+      };
+    case EDIT_QUANTITY_REQUEST:
+      return {
+        ...state
+      };
+    case EDIT_QUANTITY_SUCCESS:
+      return {
+        ...state,
+        bagData: payload.data
+      };
+    case EDIT_QUANTITY_FAILURE:
       return {
         ...state
       };
