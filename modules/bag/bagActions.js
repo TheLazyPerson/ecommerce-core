@@ -53,6 +53,7 @@ export function removeFromBagAction(id) {
 }
 
 export function editQuantityAction(editQuantityObject) {
+  console.log(JSON.stringify(editQuantityObject));
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/checkout/bag/update`,
