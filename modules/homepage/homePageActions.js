@@ -3,7 +3,15 @@ import { API_ROOT } from "Core/constants";
 import {
   GET_EXHIBITION_LIST_REQUEST,
   GET_EXHIBITION_LIST_SUCCESS,
-  GET_EXHIBITION_LIST_FAILURE
+  GET_EXHIBITION_LIST_FAILURE,
+
+  GET_UPCOMING_EXHIBITION_LIST_REQUEST,
+  GET_UPCOMING_EXHIBITION_LIST_SUCCESS,
+  GET_UPCOMING_EXHIBITION_LIST_FAILURE,
+
+  GET_TRENDING_EXHIBITION_LIST_REQUEST,
+  GET_TRENDING_EXHIBITION_LIST_SUCCESS,
+  GET_TRENDING_EXHIBITION_LIST_FAILURE
 } from "./constants";
 
 export function getExhibitionListAction(exhibitionRequestObject) {
@@ -20,3 +28,34 @@ export function getExhibitionListAction(exhibitionRequestObject) {
     }
   };
 }
+
+export function getUpcomingExhibitionListAction(exhibitionRequestObject) {
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/exhibitions/list`,
+      method: "POST",
+      body: JSON.stringify(exhibitionRequestObject),
+      types: [
+        GET_UPCOMING_EXHIBITION_LIST_REQUEST,
+        GET_UPCOMING_EXHIBITION_LIST_SUCCESS,
+        GET_UPCOMING_EXHIBITION_LIST_FAILURE
+      ]
+    }
+  };
+}
+
+export function getTrendingExhibitionListAction(exhibitionRequestObject) {
+  return {
+    [RSAA]: {
+      endpoint: `${API_ROOT}/exhibitions/list`,
+      method: "POST",
+      body: JSON.stringify(exhibitionRequestObject),
+      types: [
+        GET_TRENDING_EXHIBITION_LIST_REQUEST,
+        GET_TRENDING_EXHIBITION_LIST_SUCCESS,
+        GET_TRENDING_EXHIBITION_LIST_FAILURE
+      ]
+    }
+  };
+}
+
