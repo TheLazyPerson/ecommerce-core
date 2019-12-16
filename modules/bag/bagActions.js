@@ -12,7 +12,8 @@ import {
   REMOVE_FROM_BAG_FAILURE,
   EDIT_QUANTITY_REQUEST,
   EDIT_QUANTITY_SUCCESS,
-  EDIT_QUANTITY_FAILURE
+  EDIT_QUANTITY_FAILURE,
+  SET_BAG_COUNT
 } from "./constants";
 
 export function addToBagAction(addItemObject) {
@@ -53,7 +54,6 @@ export function removeFromBagAction(id) {
 }
 
 export function editQuantityAction(editQuantityObject) {
-  console.log(JSON.stringify(editQuantityObject));
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/checkout/bag/update`,
@@ -66,4 +66,13 @@ export function editQuantityAction(editQuantityObject) {
       ]
     }
   };
+}
+
+export function setBagCount(bagCount) {
+  return dispatch => {
+    dispatch({
+      type: SET_BAG_COUNT,
+      payload: bagCount,
+    })
+  }
 }
