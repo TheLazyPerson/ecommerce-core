@@ -14,7 +14,11 @@ import {
   GET_TRENDING_EXHIBITION_LIST_FAILURE
 } from "./constants";
 
-export function getExhibitionListAction(exhibitionRequestObject) {
+export function getExhibitionListAction() {
+  const exhibitionRequestObject ={
+    type: "lastminute"
+  };
+
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/exhibitions/list`,
@@ -29,7 +33,11 @@ export function getExhibitionListAction(exhibitionRequestObject) {
   };
 }
 
-export function getUpcomingExhibitionListAction(exhibitionRequestObject) {
+export function getUpcomingExhibitionListAction() {
+  const exhibitionRequestObject ={
+    type: "upcoming"
+  };
+
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/exhibitions/list`,
@@ -44,7 +52,11 @@ export function getUpcomingExhibitionListAction(exhibitionRequestObject) {
   };
 }
 
-export function getTrendingExhibitionListAction(exhibitionRequestObject) {
+export function getTrendingExhibitionListAction() {
+  const exhibitionRequestObject ={
+    type: "full"
+  };
+
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/exhibitions/list`,
