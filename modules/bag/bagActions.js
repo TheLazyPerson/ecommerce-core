@@ -14,9 +14,6 @@ import {
   EDIT_QUANTITY_SUCCESS,
   EDIT_QUANTITY_FAILURE,
   SET_BAG_COUNT,
-  CHECKOUT_BAG_REQUEST,
-  CHECKOUT_BAG_SUCCESS,
-  CHECKOUT_BAG_FAILURE,
 } from "./constants";
 
 export function addToBagAction(addItemObject) {
@@ -78,18 +75,4 @@ export function setBagCount(bagCount) {
       payload: bagCount,
     })
   }
-}
-
-export function checkoutBagAction() {
-  return {
-    [RSAA]: {
-      endpoint: `${API_ROOT}/checkout/bag/save`,
-      method: "GET",
-      types: [
-        { type: CHECKOUT_BAG_REQUEST, meta: {showLoader: true} },
-        { type: CHECKOUT_BAG_SUCCESS, meta: {showLoader: false}},
-        { type: CHECKOUT_BAG_FAILURE, meta: {showLoader: false}}
-      ]
-    }
-  };
 }

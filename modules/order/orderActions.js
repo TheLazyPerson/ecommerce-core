@@ -1,3 +1,5 @@
+import { RSAA } from "redux-api-middleware";
+import { API_ROOT } from "Core/constants";
 import {
   GET_ORDER_LIST_REQUEST,
   GET_ORDER_LIST_SUCCESS,
@@ -23,7 +25,7 @@ export function getOrderListAction() {
 }
 
 
-export function getOrderDetails(orderId) {
+export function getOrderDetailsAction(orderId) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/orders/${orderId}/view`,

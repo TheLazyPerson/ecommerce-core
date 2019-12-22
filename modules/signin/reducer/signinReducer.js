@@ -12,7 +12,7 @@ const initialState = {
   isUserSignedIn: false
 };
 
-export default function signinReducer(state = initialState, { type, payload }) {
+export default function signInReducer(state = initialState, { type, payload }) {
   switch (type) {
     case SIGN_IN_SUCCESS:
       if (payload.code == 200 || payload.code == 201) {
