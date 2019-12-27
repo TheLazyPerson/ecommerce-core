@@ -26,6 +26,7 @@ export default store => next => action => {
         Authorization: ``,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Accept-Language": "ar",
         Platform: platform,
         Build: Build,
         Accept: "application/json,*/*"
@@ -37,6 +38,7 @@ export default store => next => action => {
         Authorization: Auth.GetBearerToken(store) || "",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Accept-Language": "ar",
         Platform: platform,
         Build: Build,
         Accept: "application/json,*/*"
