@@ -6,7 +6,10 @@ import {
 
 const initialState = {
   orderList: [],
-  orderDetails: {}
+  orderDetails: {
+    shipping_address: {},
+    items: [],
+  }
 };
 
 export default function orderReducer(
