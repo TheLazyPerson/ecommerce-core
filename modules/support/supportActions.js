@@ -13,9 +13,9 @@ export function sendFeedbackAction(feedbackObject) {
       method: "POST",
       body: JSON.stringify(feedbackObject),
       types: [
-        POST_FEEDBACK_REQUEST,
-        POST_FEEDBACK_SUCCESS,
-        POST_FEEDBACK_FAILURE
+        { type: POST_FEEDBACK_REQUEST,  meta: { showLoader: true } },
+        { type: POST_FEEDBACK_SUCCESS,  meta: { showLoader: false } },
+        { type: POST_FEEDBACK_FAILURE,  meta: { showLoader: false } }
       ]
     }
   };
