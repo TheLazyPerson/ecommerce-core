@@ -13,7 +13,7 @@ import {
   EDIT_QUANTITY_FAILURE,
   SET_BAG_COUNT
 } from "./constants";
-import { CookieService } from "Utils/cookieService";
+import { setToStorage } from "Utils/storageWrapper";
 
 const initialState = {
   bagCount: 0,
@@ -63,5 +63,5 @@ export default function bagReducer(state = initialState, { type, payload }) {
 
 const setToLocalStorage = (value) => {
   // Check platform if required
-  CookieService.set('BAG_COUNT', value);
+  setToStorage('BAG_COUNT', value);
 }
