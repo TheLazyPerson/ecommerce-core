@@ -1,26 +1,26 @@
 // TODO have env checks for react-native and react.js
 
-const IS_PRODUCTION = process.env.APP_ENV === "production";
+const IS_PRODUCTION = process.env.APP_ENV === 'production';
 
 const production = {
-  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com",
-  SENTRY_KEY: "",
-  SENTRY_APP: "",
-  API_CLIENT_ID: "1",
-  API_CLIENT_SECRET: ""
+  API_URL: 'http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com',
+  SENTRY_KEY: '',
+  SENTRY_APP: '',
+  API_CLIENT_ID: '1',
+  API_CLIENT_SECRET: '',
 };
 
 const development = {
-  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com",
-  SENTRY_KEY: "",
-  SENTRY_APP: "",
-  API_CLIENT_ID: "1",
-  API_CLIENT_SECRET: "",
-  PUSHER_APP_KEY: ""
+  API_URL: 'http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com',
+  SENTRY_KEY: '',
+  SENTRY_APP: '',
+  API_CLIENT_ID: '1',
+  API_CLIENT_SECRET: '',
+  PUSHER_APP_KEY: '',
 };
 
-const API_VERSION = "api/v1";
-export const IS_WEB = process.env.IS_WEB === "true";
+const API_VERSION = 'api/v1';
+export const IS_WEB = process.env.IS_WEB === 'true';
 
 export const API_URL = IS_PRODUCTION ? production.API_URL : development.API_URL;
 export const API_ROOT = `${API_URL}/${API_VERSION}`;
@@ -38,9 +38,9 @@ export const LOGIN_API_CONSTANTS = {
     : development.API_CLIENT_ID,
   client_secret: IS_PRODUCTION
     ? production.API_CLIENT_SECRET
-    : development.API_CLIENT_SECRET
+    : development.API_CLIENT_SECRET,
 };
 
 //platform keys
 export const Build = 100;
-export const platform = IS_WEB ? "web" : "react-native";
+export const platform = IS_WEB ? 'web' : 'react-native';

@@ -1,27 +1,27 @@
 import {
   POST_CHANGE_PASSWORD_REQUEST,
   POST_CHANGE_PASSWORD_SUCCESS,
-  POST_CHANGE_PASSWORD_FAILURE
-} from "./constants";
+  POST_CHANGE_PASSWORD_FAILURE,
+} from './constants';
 
 const initialState = {};
 
 export default function changePasswordReducer(
   state = initialState,
-  { type, payload }
+  {type, payload},
 ) {
   switch (type) {
     case POST_CHANGE_PASSWORD_REQUEST:
       return {
-        ...state
+        ...state,
       };
     case POST_CHANGE_PASSWORD_SUCCESS:
       return {
-        ...state
+        ...state,
       };
     case POST_CHANGE_PASSWORD_FAILURE:
       return {
-        ...state
+        ...state,
       };
     default:
       return state;

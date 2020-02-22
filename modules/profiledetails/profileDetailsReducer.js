@@ -4,42 +4,42 @@ import {
   GET_PROFILE_DETAILS_FAILURE,
   EDIT_PROFILE_DETAILS_REQUEST,
   EDIT_PROFILE_DETAILS_SUCCESS,
-  EDIT_PROFILE_DETAILS_FAILURE
-} from "./constants";
+  EDIT_PROFILE_DETAILS_FAILURE,
+} from './constants';
 
 const initialState = {
-  userDetails: {}
+  userDetails: {},
 };
 
 export default function profileDetailsReducer(
   state = initialState,
-  { type, payload }
+  {type, payload},
 ) {
   switch (type) {
     case GET_PROFILE_DETAILS_REQUEST:
       return {
-        ...state
+        ...state,
       };
     case GET_PROFILE_DETAILS_SUCCESS:
       return {
         ...state,
-        userDetails: payload.data.user_details
+        userDetails: payload.data.user_details,
       };
     case GET_PROFILE_DETAILS_FAILURE:
       return {
-        ...state
+        ...state,
       };
     case EDIT_PROFILE_DETAILS_REQUEST:
       return {
-        ...state
+        ...state,
       };
     case EDIT_PROFILE_DETAILS_SUCCESS:
       return {
-        ...state
+        ...state,
       };
     case EDIT_PROFILE_DETAILS_FAILURE:
       return {
-        ...state
+        ...state,
       };
     default:
       return state;

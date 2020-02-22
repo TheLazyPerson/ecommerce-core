@@ -1,15 +1,10 @@
-import {
-  SET_LANGUAGE,
-} from './constants';
+import {SET_LANGUAGE} from './constants';
 
 const initialState = {
-  languageCode: ''
+  languageCode: '',
 };
 
-export default function languageReducer(
-  state = initialState,
-  { type, payload }
-){
+export default function languageReducer(state = initialState, {type, payload}) {
   switch (type) {
     case SET_LANGUAGE:
       return {
