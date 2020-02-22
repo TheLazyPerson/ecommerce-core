@@ -1,24 +1,27 @@
 import {
   POST_FEEDBACK_REQUEST,
   POST_FEEDBACK_SUCCESS,
-  POST_FEEDBACK_FAILURE,
-} from './constants';
+  POST_FEEDBACK_FAILURE
+} from "./constants";
 
 const initialState = {};
 
-export default function supportReducer(state = initialState, {type, payload}) {
+export default function supportReducer(
+  state = initialState,
+  { type, payload }
+) {
   switch (type) {
     case POST_FEEDBACK_REQUEST:
       return {
-        ...state,
+        ...state
       };
     case POST_FEEDBACK_SUCCESS:
       return {
-        ...state,
+        ...state
       };
     case POST_FEEDBACK_FAILURE:
       return {
-        ...state,
+        ...state
       };
     default:
       return state;

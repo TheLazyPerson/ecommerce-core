@@ -11,23 +11,23 @@ import {
   EDIT_QUANTITY_REQUEST,
   EDIT_QUANTITY_SUCCESS,
   EDIT_QUANTITY_FAILURE,
-  SET_BAG_COUNT,
-} from './constants';
-import {setToStorage} from 'Utils/storageWrapper';
+  SET_BAG_COUNT
+} from "./constants";
+import { setToStorage } from "Utils/storageWrapper";
 
 const initialState = {
   bagCount: 0,
-  bagData: {},
+  bagData: {}
 };
 
-export default function bagReducer(state = initialState, {type, payload}) {
+export default function bagReducer(state = initialState, { type, payload }) {
   switch (type) {
     case GET_BAG_SUCCESS:
       setToLocalStorage(payload.data.items_count);
       return {
         ...state,
         bagCount: payload.data.items_count,
-        bagData: payload.data,
+        bagData: payload.data
       };
     case ADD_TO_BAG_SUCCESS:
       setToLocalStorage(payload.data.items_count);
@@ -37,31 +37,31 @@ export default function bagReducer(state = initialState, {type, payload}) {
         bagCount: payload.data.items_count,
       };
     case REMOVE_FROM_BAG_SUCCESS:
-      setToLocalStorage(payload.data.items_count);
-      return {
+    setToLocalStorage(payload.data.items_count);
+    return {
         ...state,
         bagData: payload.data,
         bagCount: payload.data.items_count,
       };
     case EDIT_QUANTITY_SUCCESS:
-      setToLocalStorage(payload.data.items_count);
-      return {
+    setToLocalStorage(payload.data.items_count);
+    return {
         ...state,
         bagData: payload.data,
         bagCount: payload.data.items_count,
       };
-
-    case SET_BAG_COUNT:
+    
+    case SET_BAG_COUNT: 
       return {
         ...state,
         bagCount: payload,
-      };
+      }
     default:
       return state;
   }
 }
 
-const setToLocalStorage = value => {
+const setToLocalStorage = (value) => {
   // Check platform if required
   setToStorage('BAG_COUNT', value);
-};
+}

@@ -1,41 +1,41 @@
-import {GET_SEARCH_SUCCESS} from './searchConstants';
+import {
+GET_SEARCH_SUCCESS,
+} from "./searchConstants";
 import {
   POST_ADD_TO_WISHLIST_SUCCESS,
-  GET_REMOVE_FROM_WISHLIST_SUCCESS,
+  GET_REMOVE_FROM_WISHLIST_SUCCESS
 } from 'Core/modules/wishlist/wishlistConstants';
 import map from 'lodash/map';
 
 const initialState = {
   productList: [],
-  exhibitionList: [],
+  exhibitionList: []
 };
 
 export default function searchReducer(
   state = initialState,
-  {type, payload, meta},
+  { type, payload, meta }
 ) {
   switch (type) {
+
     case GET_SEARCH_SUCCESS:
       return {
         ...state,
         productList: payload.data.products,
-        exhibitionList: payload.data.exhibitions,
+        exhibitionList: payload.data.exhibitions
       };
     case POST_ADD_TO_WISHLIST_SUCCESS:
+      
       return {
         ...state,
-        productList: updateProductFromList(state.productList, meta.product_id, {
-          is_wishlisted: true,
-        }),
+        productList: updateProductFromList(state.productList, meta.product_id, {is_wishlisted: true})
       };
 
     case GET_REMOVE_FROM_WISHLIST_SUCCESS:
       return {
         ...state,
-        productList: updateProductFromList(state.productList, meta.product_id, {
-          is_wishlisted: false,
-        }),
-      };
+        productList: updateProductFromList(state.productList, meta.product_id, {is_wishlisted: false})
+      }
     default:
       return state;
   }
@@ -43,13 +43,14 @@ export default function searchReducer(
 
 const updateProductFromList = (productList, productId, updateObject) => {
   return map(productList, product => {
-    if (product.id === productId) {
+    if(product.id == productId) {
       return {
         ...product,
         ...updateObject,
-      };
+      }
     }
 
     return product;
   });
-};
+}
+

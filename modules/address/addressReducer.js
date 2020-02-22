@@ -10,63 +10,66 @@ import {
   REMOVE_ADDRESS_FAILURE,
   CREATE_ADDRESS_REQUEST,
   CREATE_ADDRESS_SUCCESS,
-  CREATE_ADDRESS_FAILURE,
-} from './constants';
+  CREATE_ADDRESS_FAILURE
+} from "./constants";
 
 const initialState = {
-  addressList: [],
+  addressList: []
 };
 
-export default function addressReducer(state = initialState, {type, payload}) {
+export default function addressReducer(
+  state = initialState,
+  { type, payload }
+) {
   switch (type) {
     case GET_ADDRESS_LIST_REQUEST:
       return {
-        ...state,
+        ...state
       };
     case GET_ADDRESS_LIST_SUCCESS:
       return {
         ...state,
-        addressList: payload.data,
+        addressList: payload.data
       };
     case GET_ADDRESS_LIST_FAILURE:
       return {
-        ...state,
+        ...state
       };
     case REMOVE_ADDRESS_REQUEST:
       return {
-        ...state,
+        ...state
       };
     case REMOVE_ADDRESS_SUCCESS:
       return {
-        ...state,
+        ...state
       };
     case REMOVE_ADDRESS_FAILURE:
       return {
-        ...state,
+        ...state
       };
     case EDIT_ADDRESS_REQUEST:
       return {
-        ...state,
+        ...state
       };
     case EDIT_ADDRESS_SUCCESS:
       return {
-        ...state,
+        ...state
       };
     case EDIT_ADDRESS_FAILURE:
       return {
-        ...state,
+        ...state
       };
     case CREATE_ADDRESS_REQUEST:
       return {
-        ...state,
+        ...state
       };
     case CREATE_ADDRESS_SUCCESS:
       return {
-        ...state,
+        ...state
       };
     case CREATE_ADDRESS_FAILURE:
       return {
-        ...state,
+        ...state
       };
     default:
       return state;
