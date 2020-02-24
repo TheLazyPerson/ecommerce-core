@@ -3,7 +3,7 @@
 const IS_PRODUCTION = process.env.APP_ENV === "production";
 
 const production = {
-  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com",
+  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com:8082",
   SENTRY_KEY: "",
   SENTRY_APP: "",
   API_CLIENT_ID: "1",
@@ -11,7 +11,7 @@ const production = {
 };
 
 const development = {
-  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com",
+  API_URL: "http://ec2-15-206-82-110.ap-south-1.compute.amazonaws.com:8082",
   SENTRY_KEY: "",
   SENTRY_APP: "",
   API_CLIENT_ID: "1",
