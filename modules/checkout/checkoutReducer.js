@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   deliveryAddress: {},
-  shippingMethod: '',
+  shippingMethod: 'standard',
   paymentMethod: '',
 };
 
@@ -20,7 +20,7 @@ export default function checkoutReducer(state = initialState, { type, payload })
         ...state,
         deliveryAddress: payload
       }
-    
+
     case SELECT_SHIPPING_METHOD:
       return {
         ...state,

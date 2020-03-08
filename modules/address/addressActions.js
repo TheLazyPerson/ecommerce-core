@@ -36,7 +36,11 @@ export function editAddressAction(id, addressObject) {
       endpoint: `${API_ROOT}/customer/address/${id}/update`,
       method: "POST",
       body: JSON.stringify(addressObject),
-      types: [EDIT_ADDRESS_REQUEST, EDIT_ADDRESS_SUCCESS, EDIT_ADDRESS_FAILURE]
+      types: [
+        { type: EDIT_ADDRESS_REQUEST, meta: { showLoader: true } },
+        { type: EDIT_ADDRESS_SUCCESS, meta: { showLoader: true } },
+        { type: EDIT_ADDRESS_FAILURE, meta: { showLoader: true } }
+      ]
     }
   };
 }
@@ -63,9 +67,9 @@ export function createAddressAction(addressObject) {
       method: "POST",
       body: JSON.stringify(addressObject),
       types: [
-        CREATE_ADDRESS_REQUEST,
-        CREATE_ADDRESS_SUCCESS,
-        CREATE_ADDRESS_FAILURE
+        { type: CREATE_ADDRESS_REQUEST, meta: { showLoader: true } },
+        { type: CREATE_ADDRESS_SUCCESS, meta: { showLoader: false } },
+        { type: CREATE_ADDRESS_FAILURE, meta: { showLoader: false } }
       ]
     }
   };
