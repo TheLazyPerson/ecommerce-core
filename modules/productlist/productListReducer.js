@@ -1,7 +1,11 @@
 import {
   GET_PRODUCT_LIST_REQUEST,
   GET_PRODUCT_LIST_SUCCESS,
-  GET_PRODUCT_LIST_FAILURE
+  GET_PRODUCT_LIST_FAILURE,
+
+  SET_FILTERS,
+  ADD_FILTERS,
+  CLEAR_FILTERS,
 } from "./constants";
 
 import {
@@ -11,7 +15,8 @@ import {
 import map from 'lodash/map';
 
 const initialState = {
-  productList: []
+  productList: [],
+  filters: {},
 };
 
 export default function productListReducer(
@@ -33,17 +38,39 @@ export default function productListReducer(
         ...state
       };
     case POST_ADD_TO_WISHLIST_SUCCESS:
-      
+
       return {
         ...state,
-        productList: updateProductFromList(state.productList, meta.product_id, {is_wishlisted: true})
+        productList: updateProductFromList(state.productList, meta.product_id, { is_wishlisted: true })
       };
 
     case GET_REMOVE_FROM_WISHLIST_SUCCESS:
       return {
         ...state,
-        productList: updateProductFromList(state.productList, meta.product_id, {is_wishlisted: false})
+        productList: updateProductFromList(state.productList, meta.product_id, { is_wishlisted: false })
       }
+
+    case SET_FILTERS:
+      return {
+        ...state,
+        filter: payload,
+      }
+
+    case ADD_FILTERS:
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          payload
+        }
+      }
+
+    case CLEAR_FILTERS:
+      return {
+        ...state,
+        filter: {}
+      }
+
     default:
       return state;
   }
@@ -52,7 +79,7 @@ export default function productListReducer(
 
 const updateProductFromList = (productList, productId, updateObject) => {
   return map(productList, product => {
-    if(product.id == productId) {
+    if (product.id == productId) {
       return {
         ...product,
         ...updateObject,
@@ -62,4 +89,3 @@ const updateProductFromList = (productList, productId, updateObject) => {
     return product;
   });
 }
-
