@@ -12,7 +12,7 @@ import {
 export function getSettingsAction() {
   return {
     [RSAA]: {
-      endpoint: `${API_ROOT}/seller/settings`,
+      endpoint: `${API_ROOT}/customer/settings`,
       method: 'GET',
       types: [
         {type: GET_SETTINGS_REQUEST, meta: {showLoader: true}},
@@ -26,7 +26,7 @@ export function getSettingsAction() {
 export function updateSettingsAction(settingsObject) {
   return {
     [RSAA]: {
-      endpoint: `${API_ROOT}/seller/settings`,
+      endpoint: `${API_ROOT}/customer/settings`,
       method: 'POST',
       body: JSON.stringify(settingsObject),
       types: [
