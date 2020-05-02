@@ -1,5 +1,5 @@
-import { RSAA } from "redux-api-middleware";
-import { API_ROOT } from "Core/constants";
+import {RSAA} from 'redux-api-middleware';
+import {API_ROOT} from 'Core/constants';
 import {
   CREATE_PASSWORD_REQUEST,
   CREATE_PASSWORD_SUCCESS,
@@ -10,18 +10,18 @@ import {
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAILURE,
-} from "./constants";
+} from './constants';
 
 export function createPasswordTokenAction(createPasswordObject) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/password/create`,
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(createPasswordObject),
       types: [
-        CREATE_PASSWORD_REQUEST,
-        CREATE_PASSWORD_SUCCESS,
-        CREATE_PASSWORD_FAILURE,
+        {CREATE_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
+        {CREATE_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
+        {CREATE_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
@@ -31,7 +31,7 @@ export function verifyPasswordTokenAction(token) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/password/find/${token}`,
-      method: "GET",
+      method: 'GET',
       body: undefined,
       types: [TOKEN_CHECK_REQUEST, TOKEN_CHECK_SUCCESS, TOKEN_CHECK_FAILURE],
     },
@@ -42,12 +42,12 @@ export function resetPasswordAction(resetPasswordObject) {
   return {
     [RSAA]: {
       endpoint: `${API_ROOT}/customer/password/reset`,
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(resetPasswordObject),
       types: [
-        RESET_PASSWORD_REQUEST,
-        RESET_PASSWORD_SUCCESS,
-        RESET_PASSWORD_FAILURE,
+        {RESET_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
+        {RESET_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
+        {RESET_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

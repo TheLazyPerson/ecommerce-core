@@ -15,9 +15,18 @@ export function getSettingsAction() {
       endpoint: `${API_ROOT}/customer/settings`,
       method: 'GET',
       types: [
-        {type: GET_SETTINGS_REQUEST, meta: {showLoader: true}},
-        {type: GET_SETTINGS_SUCCESS, meta: {showLoader: false}},
-        {type: GET_SETTINGS_FAILURE, meta: {showLoader: false}},
+        {
+          type: GET_SETTINGS_REQUEST,
+          meta: {showLoader: true, showLoaderMobile: true},
+        },
+        {
+          type: GET_SETTINGS_SUCCESS,
+          meta: {showLoader: false, showLoaderMobile: false},
+        },
+        {
+          type: GET_SETTINGS_FAILURE,
+          meta: {showLoader: false, showLoaderMobile: false},
+        },
       ],
     },
   };
@@ -30,9 +39,18 @@ export function updateSettingsAction(settingsObject) {
       method: 'POST',
       body: JSON.stringify(settingsObject),
       types: [
-        {type: UPDATE_SETTINGS_REQUEST, meta: {showLoader: true}},
-        {type: UPDATE_SETTINGS_SUCCESS, meta: {showLoader: false}},
-        {type: UPDATE_SETTINGS_FAILURE, meta: {showLoader: false}},
+        {
+          type: UPDATE_SETTINGS_REQUEST,
+          meta: {showLoader: true, showLoaderMobile: true},
+        },
+        {
+          type: UPDATE_SETTINGS_SUCCESS,
+          meta: {showLoader: false, showLoaderMobile: false},
+        },
+        {
+          type: UPDATE_SETTINGS_FAILURE,
+          meta: {showLoader: false, showLoaderMobile: false},
+        },
       ],
     },
   };
