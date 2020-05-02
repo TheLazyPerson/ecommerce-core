@@ -16,9 +16,9 @@ export function getProfileDetailsAction() {
       method: 'GET',
       body: JSON.stringify(),
       types: [
-        {GET_PROFILE_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_PROFILE_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_PROFILE_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_PROFILE_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_PROFILE_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_PROFILE_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
@@ -31,9 +31,9 @@ export function editProfileDetailsAction(updatedProfileObject) {
       method: 'POST',
       body: JSON.stringify(updatedProfileObject),
       types: [
-        {EDIT_PROFILE_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
-        {EDIT_PROFILE_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
-        {EDIT_PROFILE_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
+        {type: EDIT_PROFILE_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
+        {type: EDIT_PROFILE_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: EDIT_PROFILE_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

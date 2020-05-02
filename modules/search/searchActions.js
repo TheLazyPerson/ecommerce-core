@@ -13,9 +13,9 @@ export function searchAction(type, query) {
       endpoint: `${API_ROOT}/search?type=${type}&query=${query}`,
       method: 'GET',
       types: [
-        {GET_SEARCH_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_SEARCH_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_SEARCH_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_SEARCH_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_SEARCH_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_SEARCH_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

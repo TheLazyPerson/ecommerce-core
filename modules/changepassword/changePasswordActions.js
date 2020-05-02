@@ -13,9 +13,9 @@ export function changePasswordAction(changePasswordObject) {
       method: 'POST',
       body: JSON.stringify(changePasswordObject),
       types: [
-        {POST_CHANGE_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
-        {POST_CHANGE_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
-        {POST_CHANGE_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
+        {type: POST_CHANGE_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
+        {type: POST_CHANGE_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: POST_CHANGE_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

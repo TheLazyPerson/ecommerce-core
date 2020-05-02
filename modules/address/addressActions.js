@@ -52,11 +52,11 @@ export function editAddressAction(id, addressObject) {
         },
         {
           type: EDIT_ADDRESS_SUCCESS,
-          meta: {showLoader: true, showLoaderMobile: false},
+          meta: {showLoader: false, showLoaderMobile: false},
         },
         {
           type: EDIT_ADDRESS_FAILURE,
-          meta: {showLoader: true, showLoaderMobile: false},
+          meta: {showLoader: false, showLoaderMobile: false},
         },
       ],
     },

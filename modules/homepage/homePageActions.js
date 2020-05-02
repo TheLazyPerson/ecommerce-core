@@ -23,9 +23,9 @@ export function getExhibitionListAction() {
       method: 'POST',
       body: JSON.stringify(exhibitionRequestObject),
       types: [
-        {GET_EXHIBITION_LIST_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_EXHIBITION_LIST_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_EXHIBITION_LIST_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_EXHIBITION_LIST_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_EXHIBITION_LIST_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_EXHIBITION_LIST_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
@@ -42,9 +42,18 @@ export function getUpcomingExhibitionListAction() {
       method: 'POST',
       body: JSON.stringify(exhibitionRequestObject),
       types: [
-        {GET_UPCOMING_EXHIBITION_LIST_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_UPCOMING_EXHIBITION_LIST_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_UPCOMING_EXHIBITION_LIST_FAILURE, meta: {showLoaderMobile: false}},
+        {
+          type: GET_UPCOMING_EXHIBITION_LIST_REQUEST,
+          meta: {showLoaderMobile: true},
+        },
+        {
+          type: GET_UPCOMING_EXHIBITION_LIST_SUCCESS,
+          meta: {showLoaderMobile: false},
+        },
+        {
+          type: GET_UPCOMING_EXHIBITION_LIST_FAILURE,
+          meta: {showLoaderMobile: false},
+        },
       ],
     },
   };
@@ -61,9 +70,18 @@ export function getTrendingExhibitionListAction() {
       method: 'POST',
       body: JSON.stringify(exhibitionRequestObject),
       types: [
-        {GET_TRENDING_EXHIBITION_LIST_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_TRENDING_EXHIBITION_LIST_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_TRENDING_EXHIBITION_LIST_FAILURE, meta: {showLoaderMobile: false}},
+        {
+          type: GET_TRENDING_EXHIBITION_LIST_REQUEST,
+          meta: {showLoaderMobile: true},
+        },
+        {
+          type: GET_TRENDING_EXHIBITION_LIST_SUCCESS,
+          meta: {showLoaderMobile: false},
+        },
+        {
+          type: GET_TRENDING_EXHIBITION_LIST_FAILURE,
+          meta: {showLoaderMobile: false},
+        },
       ],
     },
   };

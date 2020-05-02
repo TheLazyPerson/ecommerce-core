@@ -16,9 +16,9 @@ export function getProductListAction(id, data) {
       method: 'POST',
       body: JSON.stringify(data),
       types: [
-        {GET_PRODUCT_LIST_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_PRODUCT_LIST_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_PRODUCT_LIST_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_PRODUCT_LIST_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_PRODUCT_LIST_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_PRODUCT_LIST_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

@@ -19,9 +19,9 @@ export function createPasswordTokenAction(createPasswordObject) {
       method: 'POST',
       body: JSON.stringify(createPasswordObject),
       types: [
-        {CREATE_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
-        {CREATE_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
-        {CREATE_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
+        {type: CREATE_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
+        {type: CREATE_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: CREATE_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
@@ -45,9 +45,9 @@ export function resetPasswordAction(resetPasswordObject) {
       method: 'POST',
       body: JSON.stringify(resetPasswordObject),
       types: [
-        {RESET_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
-        {RESET_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
-        {RESET_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
+        {type: RESET_PASSWORD_REQUEST, meta: {showLoaderMobile: true}},
+        {type: RESET_PASSWORD_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: RESET_PASSWORD_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

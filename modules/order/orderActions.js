@@ -15,9 +15,9 @@ export function getOrderListAction() {
       endpoint: `${API_ROOT}/customer/orders/list`,
       method: 'GET',
       types: [
-        {GET_ORDER_LIST_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_ORDER_LIST_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_ORDER_LIST_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_ORDER_LIST_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_ORDER_LIST_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_ORDER_LIST_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
@@ -29,9 +29,9 @@ export function getOrderDetailsAction(orderId) {
       endpoint: `${API_ROOT}/customer/orders/${orderId}/view`,
       method: 'GET',
       types: [
-        {GET_ORDER_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_ORDER_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_ORDER_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_ORDER_DETAILS_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_ORDER_DETAILS_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_ORDER_DETAILS_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };

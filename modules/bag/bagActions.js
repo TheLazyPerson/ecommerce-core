@@ -49,7 +49,7 @@ export function getBagListAction() {
       types: [
         {
           type: GET_BAG_REQUEST,
-          meta: {showLoader: true, showLoaderMobile: true},
+          meta: {showLoaderMobile: true},
         },
         {
           type: GET_BAG_SUCCESS,
@@ -73,7 +73,7 @@ export function removeFromBagAction(id) {
       types: [
         {
           type: REMOVE_FROM_BAG_REQUEST,
-          meta: {showLoader: true, showLoaderMobile: true},
+          meta: {showLoaderMobile: true},
         },
         {
           type: REMOVE_FROM_BAG_SUCCESS,

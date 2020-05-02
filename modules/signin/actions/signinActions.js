@@ -23,11 +23,11 @@ export function postSigninAction(signinObject) {
         },
         {
           type: SIGN_IN_SUCCESS,
-          meta: {showLoader: true, showLoaderMobile: false},
+          meta: {showLoader: false, showLoaderMobile: false},
         },
         {
           type: SIGN_IN_FAILURE,
-          meta: {showLoader: true, showLoaderMobile: false},
+          meta: {showLoader: false, showLoaderMobile: false},
         },
       ],
     },

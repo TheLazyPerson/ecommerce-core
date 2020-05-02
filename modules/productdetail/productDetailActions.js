@@ -13,9 +13,9 @@ export function getProductDetailAction(exhibitionId, productId) {
       method: 'GET',
       body: JSON.stringify(),
       types: [
-        {GET_PRODUCT_DETAIL_REQUEST, meta: {showLoaderMobile: true}},
-        {GET_PRODUCT_DETAIL_SUCCESS, meta: {showLoaderMobile: false}},
-        {GET_PRODUCT_DETAIL_FAILURE, meta: {showLoaderMobile: false}},
+        {type: GET_PRODUCT_DETAIL_REQUEST, meta: {showLoaderMobile: true}},
+        {type: GET_PRODUCT_DETAIL_SUCCESS, meta: {showLoaderMobile: false}},
+        {type: GET_PRODUCT_DETAIL_FAILURE, meta: {showLoaderMobile: false}},
       ],
     },
   };
