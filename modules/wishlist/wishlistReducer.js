@@ -3,6 +3,7 @@ import {
   GET_WISHLIST_SUCCESS,
   GET_WISHLIST_FAILURE,
   GET_REMOVE_FROM_WISHLIST_SUCCESS,
+  MOVE_TO_BAG_SUCCESS,
 } from './wishlistConstants';
 
 const initialState = {
@@ -22,6 +23,13 @@ export default function wishlistReducer(state = initialState, {type, payload}) {
         ...state,
         wishlist: payload.data,
       };
+
+    case MOVE_TO_BAG_SUCCESS:
+      return {
+        ...state,
+        wishlist: payload.data,
+      };
+
     default:
       return state;
   }
