@@ -1,11 +1,11 @@
 import {
-  SIGN_IN_REQUEST,
+  // SIGN_IN_REQUEST,
   SIGN_IN_SUCCESS,
-  SIGN_IN_FAILURE,
+  // SIGN_IN_FAILURE,
   LOGOUT_SUCCESS,
   SET_USER_DATA,
-} from '../constants/signinConstants';
-import {setToStorage, removeFromStorage} from 'Utils/storageWrapper';
+} from "../constants/signinConstants";
+import { setToStorage, removeFromStorage } from "Utils/storageWrapper";
 
 const initialState = {
   userDetails: null,
@@ -13,11 +13,11 @@ const initialState = {
   isUserSignedIn: false,
 };
 
-export default function signInReducer(state = initialState, {type, payload}) {
+export default function signInReducer(state = initialState, { type, payload }) {
   switch (type) {
     case SIGN_IN_SUCCESS:
-      if (payload.code == 200 || payload.code == 201) {
-        setToStorage('access_token', payload.data.user_token.access_token);
+      if (payload.code === 200 || payload.code === 201) {
+        setToStorage("access_token", payload.data.user_token.access_token);
         return {
           ...state,
           userDetails: payload.data.user_details,
@@ -26,7 +26,7 @@ export default function signInReducer(state = initialState, {type, payload}) {
         };
       }
 
-      return {...state};
+      return { ...state };
 
     case SET_USER_DATA:
       return {
@@ -37,8 +37,8 @@ export default function signInReducer(state = initialState, {type, payload}) {
       };
 
     case LOGOUT_SUCCESS:
-      if (payload.code == 200 || payload.code == 201) {
-        removeFromStorage('access_token');
+      if (payload.code === 200 || payload.code === 201) {
+        removeFromStorage("access_token");
         return {
           ...state,
           userDetails: null,
@@ -47,7 +47,7 @@ export default function signInReducer(state = initialState, {type, payload}) {
         };
       }
 
-      return {...state};
+      return { ...state };
 
     default:
       return state;

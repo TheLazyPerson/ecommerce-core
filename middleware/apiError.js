@@ -13,12 +13,12 @@ import { isEmpty } from "lodash";
     }
 */
 
-export default store => next => action => {
+export default (store) => (next) => (action) => {
   const {
     payload,
-    type, //eg:- type: "PROJECTS_RECENT_CHECKINS_FAILURE"
+    //type, //eg:- type: "PROJECTS_RECENT_CHECKINS_FAILURE"
     error, //eg:- error: true
-    meta //contains data provided in actions
+    meta, //contains data provided in actions
   } = action;
 
   if (error) {
@@ -83,7 +83,7 @@ export default store => next => action => {
 const apiErrorAction = (dispatch, message) => {
   dispatch({
     type: "SHOW_API_ERROR_MESSAGE",
-    payload: {  message }
+    payload: { message },
   });
 };
 
