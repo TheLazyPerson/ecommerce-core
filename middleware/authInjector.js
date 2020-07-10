@@ -4,13 +4,13 @@ import { platform, Build } from "../constants/index";
 import { isTypeRequest } from "../utils/validationHelper";
 import Auth from "../auth";
 
-export default store => next => action => {
+export default (store) => (next) => (action) => {
   const callApi = action[RSAA];
 
   // Check if this action is a redux-api-middleware action.
   if (callApi) {
     const { types } = callApi;
-    console.log(types, "types");
+    // console.log(types, "types");
 
     //check if auth is required or not
     if (
@@ -29,7 +29,7 @@ export default store => next => action => {
         "Accept-Language": "ar",
         Platform: platform,
         Build: Build,
-        Accept: "application/json,*/*"
+        Accept: "application/json,*/*",
       });
 
       return next(action);
@@ -41,7 +41,7 @@ export default store => next => action => {
         "Accept-Language": "ar",
         Platform: platform,
         Build: Build,
-        Accept: "application/json,*/*"
+        Accept: "application/json,*/*",
       });
       return next(action);
     }

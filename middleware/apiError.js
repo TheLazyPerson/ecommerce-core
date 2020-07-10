@@ -22,7 +22,7 @@ export default (store) => (next) => (action) => {
   } = action;
 
   if (error) {
-    console.log("Api Error:", action);
+    // console.log("Api Error:", action);
 
     if (payload && payload.name === "RequestError") {
       //Request error occurs when there is some malformed input at our end
