@@ -82,7 +82,7 @@ export default function productListReducer(
 
 const updateProductFromList = (productList, productId, updateObject) => {
   return map(productList, (product) => {
-    if (product.id == productId) {
+    if (product.id === productId) {
       return {
         ...product,
         ...updateObject,
